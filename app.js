@@ -6,6 +6,7 @@ const PORT = process.env.PORT;
 
 const app = express();
 
+app.use(express.json())
 configRout(app);
 
 app.listen(PORT, () => {
