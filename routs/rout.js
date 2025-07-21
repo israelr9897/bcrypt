@@ -1,11 +1,12 @@
 import express from "express";
-import { hashePass } from "../middelweare/middelPass.js";
-import { addUser, isExists } from "../ctrl/userCtrl.js";
+import { addUser, getUsers, isExists } from "../ctrl/userCtrl.js";
+import { verifyToken } from "../middleware/tokenMiddle.js";
 
 const router = express.Router();
 
 // router.use(hashePass)
-router.post("/signup", addUser)
-router.post("/verify", isExists)
+router.get("/", verifyToken, getUsers)
+router.post("/signup", addUser);
+router.post("/verify", isExists);
 
 export default router;
