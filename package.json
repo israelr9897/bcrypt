@@ -8,10 +8,20 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
+    "mongodb": "^6.17.0",
     "sequelize": "^6.37.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/israelr9897/basicAPP.git"
+  },
+  "bugs": {
+    "url": "https://github.com/israelr9897/basicAPP/issues"
+  },
+  "homepage": "https://github.com/israelr9897/basicAPP#readme",
+  "description": ""
 }
