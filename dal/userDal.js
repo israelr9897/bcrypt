@@ -1,3 +1,4 @@
+import { ObjectId } from "mongodb";
 import { db } from "../db.js";
 
 export async function getUsersDB() {
@@ -6,7 +7,9 @@ export async function getUsersDB() {
 
 export async function addUserDB(UN, pass) {
   try {
-    await db.collection("Users").insertOne({ username: UN, hashPassword: pass });
+    await db
+      .collection("Users")
+      .insertOne({ username: UN, hashPassword: pass });
   } catch (error) {
     throw error;
   }
@@ -20,11 +23,11 @@ export async function getUsernameDB(UN) {
   }
 }
 
-export async function updateUsernameDB(data) {
+export async function updateUsernameDB(id, data) {
   try {
     await db
       .collection("Users")
-      .updateOne({ username: username }, { $set: { password: data.password } });
+      .updateOne({ _id: new ObjectId(id) }, { $set: data });
   } catch (error) {
     throw error;
   }
